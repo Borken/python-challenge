@@ -56,6 +56,9 @@ And:
   
   Use mock libraries to simulate places and characters api returns in the juego de tornos microservice (Now it needs the apis running and with valida data).
 
+* CI:
+
+  Add continuous integration to launch tests, execute migrations...
 ## Project Original Instructions
 
 La Compañía Plateada S.A. necesita hacer un estudio de cuanta gente vive en cada región de Juego de Tornos. Para ello, hay que construir un proyecto basado en microservicios que permita consultar y dar de alta datos sobre personajes y lugares de Poniente a través de APIs.
