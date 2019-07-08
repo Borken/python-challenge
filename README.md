@@ -1,3 +1,48 @@
+# Juego de Tornos
+With this yml, an automation build has been configured to run an application that integrates three microservices in one host.
+
+The microservices referenced, created and fetched are:
+
+* Places: https://github.com/Borken/places_microservice
+* Characters: https://github.com/Borken/characters_microservice
+* Juego de Tornos: https://github.com/Borken/juego_de_tornos_microservice
+
+## Requirements
+Having [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+
+## Installation
+
+1. Build and run the project: `docker-compose up --build -d`
+2. Init characters database:
+
+   `docker-compose exec characters_api flask db init`
+   
+   `docker-compose exec characters_api flask db migrate`
+   
+   `docker-compose exec characters_api flask db upgrade`
+3. Init places database:
+
+   `docker-compose exec places_api flask db init`
+   
+   `docker-compose exec places_api flask db migrate`
+   
+   `docker-compose exec places_api flask db upgrade`
+   
+After these steps you should be able to access a swagger ui through the url http://0.0.0.0:8080/api/ui
+
+## Optional
+
+Both databases are empty, but you can fill them with some examples running:
+
+`docker-compose exec places_api python utils/populate_database.py`
+
+And:
+
+`docker-compose exec characters_api python utils/populate_database.py`
+
+
+## Project Original Instructions
+
 La Compañía Plateada S.A. necesita hacer un estudio de cuanta gente vive en cada región de Juego de Tornos. Para ello, hay que construir un proyecto basado en microservicios que permita consultar y dar de alta datos sobre personajes y lugares de Poniente a través de APIs.
 Su idea es la siguiente:
 - Un microservicio para los Personajes (CRUD).
