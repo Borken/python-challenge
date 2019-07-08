@@ -40,6 +40,21 @@ And:
 
 `docker-compose exec characters_api python utils/populate_database.py`
 
+## Next steps:
+
+* Security: 
+
+  Add an nginx container to the build to use as a reverse proxy, with https, certificates...
+  
+  Use env variables or something similar to store the database creds instead of hardcoding them in the configurations.
+  
+  Use oauth or similar to secure communications between microservices. Primarily to avoid unwanted modifications, deletions or creations.
+
+* Testing:
+
+  Improve testing to test correct format returns in requests.
+  
+  Use mock libraries to simulate places and characters api returns in the juego de tornos microservice (Now it needs the apis running and with valida data).
 
 ## Project Original Instructions
 
