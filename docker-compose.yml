@@ -18,7 +18,7 @@ services:
       - postgres_places
   juego_de_tornos_api:
     restart: always
-    build: https://github.com/Borken/places_microservice.git#master
+    build: https://github.com/Borken/juego_de_tornos_microservice.git
     ports:
       - "8080:8080"
     command: flask run --host=0.0.0.0 --port 8080
